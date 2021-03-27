@@ -1,5 +1,5 @@
 {% set name = "libmediainfo" %}
-{% set version = "20.03" %}
+{% set version = "21.03" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/MediaArea/MediaInfoLib/archive/v{{ version }}.tar.gz
-  sha256: 2a1da41b94aa5380c537f198f3c797fd9ef23891709e935143e4535099437311
+  sha256: b083c113adb80f6608d5e86d1be07f9abd4257bd0e8456c8f9eb8756a385c5a0
 
 build:
   number: 0
@@ -39,7 +39,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Convenient unified display of the most relevant technical and tag data for video and audio files.'
+  summary: Convenient unified display of the most relevant technical and tag data for video and audio files.
 
   dev_url: https://github.com/MediaArea/MediaInfoLib
 
