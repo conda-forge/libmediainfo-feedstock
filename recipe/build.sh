@@ -2,7 +2,7 @@
 set -eu
 
 ### Create Makefiles
-cmake -g Ninja \
+cmake -GNinja \
       -DBUILD_SHARED_LIBS=ON \
       -DBUILD_ZENLIB=OFF \
       -DBUILD_ZLIB=OFF \
@@ -18,6 +18,3 @@ cmake  --build build -- -j${CPU_COUNT}
 
 ### Install
 cmake --build build -- install
-
-### Test / Check ?
-### There is no make check/test
