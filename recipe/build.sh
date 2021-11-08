@@ -3,6 +3,7 @@ set -eu
 
 ### Create Makefiles
 cmake -GNinja \
+      -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
       -DBUILD_SHARED_LIBS=ON \
       -DBUILD_ZENLIB=OFF \
       -DBUILD_ZLIB=OFF \

@@ -8,6 +8,8 @@ package:
 source:
   url: https://github.com/MediaArea/MediaInfoLib/archive/v{{ version }}.tar.gz
   sha256: 6db61bef0ad5b126d17bb59210c240f33fafb3450946e7b114d7884abf6e99fb
+  patches:
+    - cmake-find-tinyxml2.patch
 
 build:
   number: 0
