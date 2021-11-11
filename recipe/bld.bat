@@ -1,19 +1,18 @@
 rem Create Makefiles
-cmake -GNinja ^
-      -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON ^
-      -DCMAKE_PREFIX_PATH=%LIBRARY_LIB%\pkgconfig ^
-      -DBUILD_SHARED_LIBS=ON ^
-      -DBUILD_ZENLIB=OFF ^
-      -DBUILD_ZLIB=OFF ^
-      -DCMAKE_INSTALL_PREFIX=%PREFIX% ^
-      -DCMAKE_INSTALL_LIBDIR=lib ^
-      -DCMAKE_BUILD_TYPE=Release ^
-      -DINCLUDE_INSTALL_DIR=%PREFIX%\include ^
+cmake -G Ninja ^
+      -D BUILD_ZENLIB=OFF ^
+      -D BUILD_ZLIB=OFF ^
+      -D CMAKE_BUILD_TYPE=Release ^
+      -D CMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+      -D BUILD_SHARED_LIBS=OFF ^
       -S Project\CMake ^
       -B build
+if errorlevel 1 exit /b 1
 
 rem Build
 cmake --build build -- -j%CPU_COUNT%
+if errorlevel 1 exit /b 1
 
 rem Install
 cmake --build build -- install
+if errorlevel 1 exit /b 1

@@ -2,20 +2,18 @@
 set -eu
 
 ### Create Makefiles
-cmake -GNinja \
-      -DPKG_CONFIG_USE_CMAKE_PREFIX_PATH=ON \
-      -DBUILD_SHARED_LIBS=ON \
-      -DBUILD_ZENLIB=OFF \
-      -DBUILD_ZLIB=OFF \
-      -DCMAKE_INSTALL_PREFIX=$PREFIX \
-      -DCMAKE_INSTALL_LIBDIR=lib \
-      -DCMAKE_BUILD_TYPE=Release \
-      -DINCLUDE_INSTALL_DIR=$PREFIX/include \
+cmake -G Ninja \
+      -D BUILD_ZENLIB=OFF \
+      -D BUILD_ZLIB=OFF \
+      -D CMAKE_BUILD_TYPE=Release \
+      -D CMAKE_INSTALL_PREFIX=$PREFIX \
+      -D CMAKE_INSTALL_LIBDIR=lib \
+      -D BUILD_SHARED_LIBS=ON \
       -S Project/CMake \
       -B build
 
 ### Build
-cmake  --build build -- -j${CPU_COUNT}
+cmake --build build -- -j${CPU_COUNT}
 
 ### Install
 cmake --build build -- install
