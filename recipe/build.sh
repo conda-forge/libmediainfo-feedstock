@@ -2,7 +2,7 @@
 set -eu
 
 ### Create Makefiles
-cmake -G Ninja \
+cmake ${CMAKE_ARGS} -G Ninja \
       -D BUILD_ZENLIB=OFF \
       -D BUILD_ZLIB=OFF \
       -D CMAKE_BUILD_TYPE=Release \
