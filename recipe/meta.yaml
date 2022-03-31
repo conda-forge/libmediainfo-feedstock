@@ -1,5 +1,5 @@
 {% set name = "libmediainfo" %}
-{% set version = "21.09" %}
+{% set version = "22.03" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/MediaArea/MediaInfoLib/archive/v{{ version }}.tar.gz
-  sha256: 6db61bef0ad5b126d17bb59210c240f33fafb3450946e7b114d7884abf6e99fb
+  sha256: dcac1017b894e3c8d6881dd8afd7020d8b395854e00565c77ecdb602a466e749
   patches:
     - cmake-find-tinyxml2.patch
 
 build:
-  number: 2
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
 
