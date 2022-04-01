@@ -1,0 +1,38 @@
+diff --git a/Project/CMake/CMakeLists.txt b/Project/CMake/CMakeLists.txt
+index 5c49030d6..f5819a822 100644
+--- a/Project/CMake/CMakeLists.txt
++++ b/Project/CMake/CMakeLists.txt
+@@ -56,6 +56,8 @@ if (NOT BUILD_ZLIB)
+   find_package(ZLIB REQUIRED)
+ else()
+   add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/../../../zlib ${CMAKE_CURRENT_BINARY_DIR}/zlib)
++  cmake_policy(PUSH)
++  cmake_policy(SET CMP0026 OLD)
+   get_target_property(ZLIB_LIBRARIES zlibstatic LOCATION)
+   if(NOT BUILD_SHARED_LIBS)
+     get_filename_component(ZLIB_LIBRARIES ${ZLIB_LIBRARIES} NAME)
+@@ -65,6 +67,7 @@ else()
+     target_compile_options(zlibstatic PRIVATE -fPIC)
+   endif()
+   set(ZLIB_INCLUDE_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/../../../zlib ${CMAKE_CURRENT_BINARY_DIR}/zlib)
++  cmake_policy(POP)
+ endif()
+ 
+ if(VCPKG_TARGET_TRIPLET)
+@@ -405,6 +408,8 @@ endif()
+ target_link_libraries(mediainfo ${ZenLib_LIBRARY} ${ZLIB_LIBRARIES})
+ 
+ if(MSVC AND BUILD_SHARED_LIBS)
++  cmake_policy(PUSH)
++  cmake_policy(SET CMP0026 OLD)
+   get_target_property(LOCATION mediainfo LOCATION_DEBUG)
+   string(REGEX REPLACE "\\.[^.]*$" ".pdb" LOCATION "${LOCATION}")
+   install(FILES ${LOCATION} DESTINATION ${BIN_INSTALL_DIR} CONFIGURATIONS Debug)
+@@ -412,6 +417,7 @@ if(MSVC AND BUILD_SHARED_LIBS)
+   get_target_property(LOCATION mediainfo LOCATION_RELWITHDEBINFO)
+   string(REGEX REPLACE "\\.[^.]*$" ".pdb" LOCATION "${LOCATION}")
+   install(FILES ${LOCATION} DESTINATION ${BIN_INSTALL_DIR} CONFIGURATIONS RelWithDebInfo)
++  cmake_policy(POP)
+ endif()
+ 
+ if (APPLE)
