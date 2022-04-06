@@ -9,7 +9,7 @@ source:
   url: https://github.com/MediaArea/MediaInfoLib/archive/v{{ version }}.tar.gz
   sha256: dcac1017b894e3c8d6881dd8afd7020d8b395854e00565c77ecdb602a466e749
   patches:
-    - location-patch-win64-upstream.patch  # [win]
+    - location-policy-win64.patch  # [win]
 
 build:
   number: 0
