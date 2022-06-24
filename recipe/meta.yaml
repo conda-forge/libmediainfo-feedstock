@@ -1,5 +1,5 @@
 {% set name = "libmediainfo" %}
-{% set version = "22.03" %}
+{% set version = "22.06" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,10 @@ package:
 
 source:
   url: https://github.com/MediaArea/MediaInfoLib/archive/v{{ version }}.tar.gz
-  sha256: dcac1017b894e3c8d6881dd8afd7020d8b395854e00565c77ecdb602a466e749
-  patches:
-    - location-policy-win64.patch  # [win]
+  sha256: 3ff848965d7ef544aaba67f64d1245b82ba4ac9f02f6ea050e610057aec6eac4
 
 build:
-  number: 1
+  number: 0
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
 
