@@ -22,7 +22,7 @@ requirements:
     - pkg-config
   host:
     - libcurl
-    - libzen
+    - libzen >=0.4.40
     - tinyxml2
     - zlib
 
