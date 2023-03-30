@@ -1,11 +1,11 @@
-About libmediainfo
-==================
+About libmediainfo-feedstock
+============================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libmediainfo-feedstock/blob/main/LICENSE.txt)
 
 Home: https://mediaarea.net
 
 Package license: BSD-2-Clause
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/libmediainfo-feedstock/blob/main/LICENSE.txt)
 
 Summary: Convenient unified display of the most relevant technical and tag data for video and audio files.
 
