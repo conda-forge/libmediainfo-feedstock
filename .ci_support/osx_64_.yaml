@@ -23,4 +23,4 @@ target_platform:
 tinyxml2:
 - '10'
 zlib:
-- '1.2'
+- '1'
