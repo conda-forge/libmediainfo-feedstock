@@ -13,9 +13,11 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '16'
+- '18'
 libcurl:
 - '8'
+libmed:
+- '4.1'
 macos_machine:
 - x86_64-apple-darwin13.4.0
 target_platform:
