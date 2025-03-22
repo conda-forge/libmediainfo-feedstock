@@ -21,6 +21,6 @@ macos_machine:
 target_platform:
 - osx-arm64
 tinyxml2:
-- '10'
+- '10.0'
 zlib:
 - '1'
