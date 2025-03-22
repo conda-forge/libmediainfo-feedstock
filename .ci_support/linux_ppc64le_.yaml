@@ -19,6 +19,6 @@ libcurl:
 target_platform:
 - linux-ppc64le
 tinyxml2:
-- '10'
+- '10.0'
 zlib:
 - '1'

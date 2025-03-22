@@ -11,6 +11,6 @@ libcurl:
 target_platform:
 - win-64
 tinyxml2:
-- '10'
+- '10.0'
 zlib:
 - '1'
