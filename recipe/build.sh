@@ -3,6 +3,7 @@ set -eu
 
 ### Create Makefiles
 cmake ${CMAKE_ARGS} -G Ninja \
+      -D CMAKE_POLICY_VERSION_MINIMUM=3.5 \
       -D BUILD_ZENLIB=OFF \
       -D BUILD_ZLIB=OFF \
       -D CMAKE_BUILD_TYPE=Release \
