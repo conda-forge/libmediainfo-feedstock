@@ -10,7 +10,7 @@ source:
   sha256: 3985db56d18d504b0852c1485cfa9dbaf2733876058e9b8dc1b1411ebeba225d
 
 build:
-  number: 0
+  number: 1
   run_exports:
     - {{ pin_subpackage(name, max_pin="x.x") }}
 
@@ -20,7 +20,7 @@ requirements:
     - {{ stdlib("c") }}
     - cmake
     - ninja
-    - pkg-config
+    - pkgconf
   host:
     - libcurl
     - libzen >=0.4.40
